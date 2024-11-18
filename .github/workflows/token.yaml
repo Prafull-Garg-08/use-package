@@ -43,6 +43,7 @@ jobs:
         
       - name: Print .npmrc after
         run: |
+          npm config list
           cat .npmrc
       
       - name: print .npmrc variables
