@@ -35,6 +35,5 @@ jobs:
         
       - name: Print .npmrc after
         run: |
+            echo "value of the NMAE is: $NAME"
             cat .npmrc
-      - name: Verify NPM authentication
-        run: npm whoami --registry=https://npm.pkg.github.com
