@@ -31,6 +31,9 @@ jobs:
           npm install
           ls -l
           ls -a
+          npm config get name
+          npm config get hello
+          npm config get registry
           
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
