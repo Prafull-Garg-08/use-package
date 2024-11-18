@@ -17,6 +17,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Print .npmrc before
+        run: |
+          cat .npmrc
 
       - name: Install dependencies and list directory
         run: |
@@ -27,3 +30,6 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
         
+      - name: Print .npmrc after
+        run: |
+            cat .npmrc
