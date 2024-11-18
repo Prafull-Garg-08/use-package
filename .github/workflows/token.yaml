@@ -6,6 +6,9 @@ on:
     branches:
       - main
 
+env:
+  NAME: "Prafull"
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -30,10 +33,10 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
           PASSWORD: "Hello, World!"
-          NAME: "Prafull"
+          NAME: ${{env.NAME}}
       
         
       - name: Print .npmrc after
         run: |
-            echo "value of the NMAE is: $NAME"
+            echo "value of the NMAE is:${{env.NAME}}"
             cat .npmrc
