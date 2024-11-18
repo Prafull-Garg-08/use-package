@@ -29,6 +29,7 @@ jobs:
       - name: Install dependencies and list directory
         run: |
           npm config get name
+          npm config get _authToken
           npm install
           ls -l
           ls -a
