@@ -29,7 +29,12 @@ jobs:
           echo "Token: ${{secrets.NPM_TOKEN}}"
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          PASSWORD: "Hello, World!"
+          NAME: "Prafull"
+      
         
       - name: Print .npmrc after
         run: |
             cat .npmrc
+      - name: Verify NPM authentication
+        run: npm whoami --registry=https://npm.pkg.github.com
