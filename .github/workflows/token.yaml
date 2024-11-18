@@ -47,5 +47,5 @@ jobs:
           npm config get name
           npm config get hello
           npm config get registry
-          npm config get always-auth
-          npm config get _authtoken
+          Echo "token: ${{NPM_AUTH_TOKEN}}"
+
