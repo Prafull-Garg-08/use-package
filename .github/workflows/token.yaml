@@ -23,14 +23,18 @@ jobs:
       - name: Print .npmrc before
         run: |
           npm cache clean --force
+          npm config get name
           cat .npmrc
 
       - name: Install dependencies and list directory
         run: |
+          npm config get name
           npm install
           ls -l
           ls -a
           echo "Token: ${{secrets.NPM_TOKEN}}"
+          npm config get name
+
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
           PASSWORD: "Hello, World!"
@@ -39,5 +43,6 @@ jobs:
         
       - name: Print .npmrc after
         run: |
-            echo "value of the NMAE is:${{env.NAME}}"
-            cat .npmrc
+          npm config get name
+          echo "value of the NMAE is:${{env.NAME}}"
+          cat .npmrc
