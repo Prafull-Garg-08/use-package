@@ -7,6 +7,7 @@ on:
       - main
 
 env:
+  NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
   NAME: "Prafull"
   HELLO: "Hello, World!"
 
@@ -34,11 +35,6 @@ jobs:
           npm config get name
           npm config get hello
           npm config get registry
-          
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-          HELLO: ${{env.HELLO}}
-          NAME: ${{env.NAME}}
       
         
       - name: Print .npmrc after
