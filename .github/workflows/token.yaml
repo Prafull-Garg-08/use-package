@@ -12,10 +12,18 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
       - name: Setup node-version
         uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm install
+
+      - name: Install dependencies and list directory
+        run: |
+          npm install
+          ls -l
+          ls -a
+          echo "Token: ${{secrets.NPM_TOKEN}}"
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        
